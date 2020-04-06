@@ -10,7 +10,9 @@
     "eslint-plugin-import": "^2.20.2"
   },
   "scripts": {
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "lint:debug": "eslint --debug ./main.js",
+    "lint:write": "eslint --debug ./main.js --fix"
   },
   "repository": {
     "type": "git",
