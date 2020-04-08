@@ -33,3 +33,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.key:hover{
+  background-color: #ccc;
+}
+
+.pressed{
+  background-color:aquamarine;
+}

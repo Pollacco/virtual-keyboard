@@ -7,7 +7,7 @@ const keyArray = ['ё','1', '2', '3', '4', '5', '6', '7', '8', '9', '0','-','+',
 const section = document.createElement('div');
 const textArea = document.createElement('textarea');
 const keyboard = document.createElement('div');   
-const warning = document.createElement('h1')
+const warning = document.createElement('h1');
 
 section.classList.add('wrapper');
 document.body.appendChild(section);
@@ -20,7 +20,7 @@ section.appendChild(keyboard);
 
 
 
-function renderKeyboard(keyArray) {                                                     //render default keyboard
+const renderKeyboard = (keyArray) => {
     for(let i = 0; i<keyArray.length; i++){
         const key = document.createElement('div');
         key.classList.add('key');
@@ -30,3 +30,11 @@ function renderKeyboard(keyArray) {                                             
 }
 
 renderKeyboard(keyArray);
+
+keyboard.addEventListener('click', (event) => {
+    if(event.target.classList.contains('key')) {
+        let symbol = event.target
+        symbol.classList.add('pressed')
+        textArea.textContent += symbol.textContent;
+    }    
+});
